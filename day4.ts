@@ -5,7 +5,7 @@ if (Deno.args.length < 1) {
 const input = await Deno.readTextFile(Deno.args[0]);
 
 
-let lines = input.trim().split("\n");
+const lines = input.trim().split("\n");
 //console.log(lines); 
 
 
