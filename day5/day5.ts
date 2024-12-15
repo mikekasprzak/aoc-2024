@@ -44,7 +44,8 @@ for (const doc of docs) {
                     bad = true;
                     doc.splice(i+1, 0, doc[doc.indexOf(vs)]);
                     doc.splice(doc.indexOf(vs), 1);
-                    i = -1;
+                    //i = -1; // slow, starting the document over
+                    i--; // fast, taking 1 step back... though I'm not sure why 1 step back was enough, and not 2
                     break;
                 }
             }
