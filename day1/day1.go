@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"log"
 	"os"
 	"path"
 	"slices"
@@ -25,7 +24,9 @@ func main() {
 	}
 	inFile, err := os.Open(os.Args[1]) //("day1-sample.txt")
 	if err != nil {
-		log.Fatal(err)
+		//log.Fatal(err)
+		fmt.Println("Error: ", err)
+		os.Exit(1)
 	}
 	defer inFile.Close()
 
@@ -62,6 +63,6 @@ func main() {
 		totalSimilar += sim
 	}
 
-	fmt.Println("Total distance: ", totalDistance)
-	fmt.Println("Total similar: ", totalSimilar)
+	fmt.Println("Total Distance: ", totalDistance)
+	fmt.Println("Total Similar: ", totalSimilar)
 }

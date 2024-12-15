@@ -27,12 +27,12 @@ right.sort();
 
 const distances:number[] = [];
 const similars:number[] = [];
-let total = 0;
+let totalDistance = 0;
 let totalSimilar = 0;
 for (let i = 0; i < left.length; i++) {
     const distance = Math.abs(right[i] - left[i]);
     distances.push(distance);
-    total += distance;
+    totalDistance += distance;
 
     const sim = left[i] * (instances[left[i]] ?? 0);
     similars.push(sim);
@@ -40,5 +40,5 @@ for (let i = 0; i < left.length; i++) {
 }
 
 //console.log(left, right, distances, instances, similars);
-console.log("Total:", total);
+console.log("Total Distance:", totalDistance);
 console.log("Total Similar:", totalSimilar);
